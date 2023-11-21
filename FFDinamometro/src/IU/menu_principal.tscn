@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjkl0w34wt50c"]
+
+[ext_resource type="Theme" uid="uid://cu3564rlo6nkw" path="res://assets/fonts/MenuFont.tres" id="1_w2w5e"]
+[ext_resource type="Theme" uid="uid://dytpj7aw8sim3" path="res://assets/fonts/BotonFont.tres" id="2_kcq6f"]
+[ext_resource type="PackedScene" uid="uid://bx5rouqoq0wff" path="res://src/IU/entrar_boton.tscn" id="3_voelu"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.0
+offset_top = 131.0
+offset_right = 80.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme = ExtResource("1_w2w5e")
+text = "Dinamometro"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_kcq6f")
+columns = 2
+
+[node name="EntrarBoton" parent="GridContainer" instance=ExtResource("3_voelu")]
+layout_mode = 2
+next_escena = "D:/Usuarios/jesus/Desarrollo_Software/FIUNAM_Proyectos/FundamentosFisica/FFDinamometro/src/Simulador/simulador.tscn"
+
+[node name="InstrucBoton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Instrucciones"
+
+[node name="HistoriaBoton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Historia"
+
+[node name="CreditosBoton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Creditos"
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Pagina Itch.io"
+
+[node name="SalirBoton" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Salir"

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cu3564rlo6nkw"]
+
+[ext_resource type="FontFile" uid="uid://craaqo1kjulin" path="res://assets/fonts/The Physics Lab.ttf" id="1_kkpsd"]
+
+[resource]
+default_font = ExtResource("1_kkpsd")
+default_font_size = 50
