@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjkl0w34wt50c"]
+[gd_scene load_steps=8 format=3 uid="uid://cjkl0w34wt50c"]
 
 [ext_resource type="Theme" uid="uid://cu3564rlo6nkw" path="res://assets/fonts/MenuFont.tres" id="1_w2w5e"]
+[ext_resource type="Texture2D" uid="uid://dlic8fl810770" path="res://assets/Fondos/Fondo.jpeg" id="1_ybu6f"]
 [ext_resource type="Theme" uid="uid://dytpj7aw8sim3" path="res://assets/fonts/BotonFont.tres" id="2_kcq6f"]
 [ext_resource type="PackedScene" uid="uid://bx5rouqoq0wff" path="res://src/IU/entrar_boton.tscn" id="3_voelu"]
+[ext_resource type="PackedScene" uid="uid://bw3dovjxtjsu" path="res://src/IU/instruc_boton.tscn" id="4_vlai7"]
+[ext_resource type="PackedScene" uid="uid://d2434c423epkf" path="res://src/IU/itch.tscn" id="5_d6xca"]
+[ext_resource type="PackedScene" uid="uid://byl1fr3olp271" path="res://src/IU/creditos_boton.tscn" id="6_khbm2"]
 
 [node name="MenuPrincipal" type="Control"]
 layout_mode = 3
@@ -11,6 +15,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ybu6f")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -43,24 +53,26 @@ columns = 2
 
 [node name="EntrarBoton" parent="GridContainer" instance=ExtResource("3_voelu")]
 layout_mode = 2
-next_escena = "D:/Usuarios/jesus/Desarrollo_Software/FIUNAM_Proyectos/FundamentosFisica/FFDinamometro/src/Simulador/simulador.tscn"
+next_escena = "C:/Users/saulo/OneDrive/Documentos/Universidad/Fundamentos de Fisica/FIUNAM_FFDinamometro-main/FIUNAM_FFDinamometro-main/FFDinamometro/src/Simulador/simulador.tscn"
 
-[node name="InstrucBoton" type="Button" parent="GridContainer"]
+[node name="InstrucBoton" parent="GridContainer" instance=ExtResource("4_vlai7")]
 layout_mode = 2
-text = "Instrucciones"
 
 [node name="HistoriaBoton" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "Historia"
 
-[node name="CreditosBoton" type="Button" parent="GridContainer"]
+[node name="CreditosBoton" parent="GridContainer" instance=ExtResource("6_khbm2")]
 layout_mode = 2
-text = "Creditos"
 
-[node name="Button" type="Button" parent="GridContainer"]
+[node name="Button" parent="GridContainer" instance=ExtResource("5_d6xca")]
 layout_mode = 2
-text = "Pagina Itch.io"
 
 [node name="SalirBoton" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "Salir"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[connection signal="pressed" from="GridContainer/SalirBoton" to="GridContainer/EntrarBoton" method="_on_salir_boton_pressed"]
