@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2434c423epkf"]
+
+[ext_resource type="Script" path="res://src/IU/itch.gd" id="1_fg6oo"]
+
+[node name="ItchButton" type="Button"]
+offset_right = 108.0
+offset_bottom = 29.0
+text = "                              "
+script = ExtResource("1_fg6oo")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 109.0
+offset_bottom = 32.0
+text = "Pagina de Itch.io"
+underline = 2
+
+[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]

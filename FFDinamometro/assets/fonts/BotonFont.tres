@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dytpj7aw8sim3"]
+
+[ext_resource type="FontFile" uid="uid://pqnu1mgdvpwv" path="res://assets/fonts/Heavitas.ttf" id="1_h02b8"]
+
+[resource]
+default_font = ExtResource("1_h02b8")
+default_font_size = 24

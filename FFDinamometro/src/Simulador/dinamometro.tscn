@@ -1,0 +1,176 @@
+[gd_scene load_steps=21 format=3 uid="uid://cyatpvrllkxcv"]
+
+[ext_resource type="Script" path="res://src/Simulador/dinamometro.gd" id="1_21bnq"]
+[ext_resource type="Texture2D" uid="uid://boiwhbanhsl87" path="res://assets/Imagenes/dinamometro.png" id="1_ej5nq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_440e4"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(0, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgpmc"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(113, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jld6k"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(226, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyg84"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(339, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql6ra"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(452, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h07hc"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(565, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaqm6"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(678, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doq2b"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(791, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6fwa"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(904, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h4gk"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(1017, 0, 113, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgxpw"]
+atlas = ExtResource("1_ej5nq")
+region = Rect2(1130, 0, 113, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mvxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_440e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgpmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jld6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyg84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql6ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h07hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaqm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doq2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6fwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h4gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgxpw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t0qw"]
+size = Vector2(98, 309.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwxea"]
+radius = 29.1548
+
+[sub_resource type="Animation" id="Animation_kiex2"]
+resource_name = "100Gramos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_c4by0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_yab2s"]
+resource_name = "100GramosRec"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uqyqv"]
+_data = {
+"100Gramos": SubResource("Animation_kiex2"),
+"100GramosRec": SubResource("Animation_yab2s"),
+"RESET": SubResource("Animation_c4by0")
+}
+
+[node name="Dinamometro" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_21bnq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(81.75, 270.5)
+scale = Vector2(1.01327, 0.754687)
+sprite_frames = SubResource("SpriteFrames_2mvxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(91, 184)
+shape = SubResource("RectangleShape2D_5t0qw")
+
+[node name="Gancho" type="Area2D" parent="."]
+position = Vector2(-1, 5)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gancho"]
+position = Vector2(86, 366)
+shape = SubResource("CircleShape2D_lwxea")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gancho"]
+libraries = {
+"": SubResource("AnimationLibrary_uqyqv")
+}
+
+[connection signal="body_entered" from="Gancho" to="." method="_on_gancho_body_entered"]
+[connection signal="body_exited" from="Gancho" to="." method="_on_gancho_body_exited"]
