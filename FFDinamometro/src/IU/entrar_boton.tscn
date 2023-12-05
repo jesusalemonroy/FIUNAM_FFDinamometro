@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx5rouqoq0wff"]
-
-[ext_resource type="Script" path="res://src/IU/Entrar,salir.gd" id="1_neux1"]
-
-[node name="EntrarBoton" type="Button"]
-text = "Entrar"
-script = ExtResource("1_neux1")
-
-[connection signal="button_up" from="." to="." method="_on_button_up"]
